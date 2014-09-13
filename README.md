@@ -68,5 +68,5 @@ If a second argument is passed to `Meteor.show`
 context for the template (works as the `dataContext` parameter for
 [UI.dynamic](http://docs.meteor.com/#ui_dynamic)).
 
-The modal can be removed by calling `Modal.hide()` (or using the other ways to
-remove modals in bootstrap).
+The modal can be removed by calling `Modal.hide()` (or by using the other ways
+to remove modals in bootstrap).
