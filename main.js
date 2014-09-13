@@ -30,7 +30,7 @@ var templateName = 'peppelg_modal'
 
 Template[templateName].rendered = function(){
 	
-	$modal = $(this.firstNode)
+	$modal = $('.modal')
 	
 	$modal.modal()
 	
