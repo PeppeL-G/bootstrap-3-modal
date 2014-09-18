@@ -1,0 +1,86 @@
+<template name="modal_signUp">
+	<div class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">Create account</h4>
+				</div>
+				
+				<div class="modal-body">
+					
+					<p> Use the form below to create an account on this website.</p>
+					
+					<form role="form" class="form-horizontal">
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="modal_signUp_username">Username</label>
+							<div class="col-sm-9">
+								<input type="input" class="form-control" id="modal_signUp_username" placeholder="Enter username" value="{{username}}">
+								{{#with usernameError}}
+									<span class="help-block">{{this}}</span>
+								{{/with}}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="modal_signUp_email">Email address</label>
+							<div class="col-sm-9">
+								<input type="email" class="form-control" id="modal_signUp_email" placeholder="Enter email" value="{{email}}">
+								{{#with emailError}}
+									<span class="help-block">{{this}}</span>
+								{{/with}}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="modal_signUp_password0">Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="modal_signUp_password0" placeholder="Password" value="{{password0}}">
+								{{#with password0Error}}
+									<span class="help-block">{{this}}</span>
+								{{/with}}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="modal_signUp_password1">Password (again)</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="modal_signUp_password1" placeholder="Retype password" value="{{password1}}">
+								{{#with password1Error}}
+									<span class="help-block">{{this}}</span>
+								{{/with}}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="modal_signUp_acceptsUserAgreement" checked="{{isUserAgrementAccepted}}"> I understand and accept the <a href="#" class="clickRoutesToUserAgreement">User Agreement</a>.
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<input type="submit" class="btn btn-success" value="Create account" disabled="{{isAnythingWrong}}">
+							</div>
+					  </div>
+						
+					</form>
+					
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</template>

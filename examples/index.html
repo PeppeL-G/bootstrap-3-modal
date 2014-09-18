@@ -1,0 +1,14 @@
+<body>
+	{{> index}}
+</body>
+
+<template name="index">
+	{{#if currentUser}}
+		<p>Signed in as {{currentUser.username}}.</p>
+	{{/if}}
+	<ul>
+		<li><button class="btn" data-modal="signUp">Sign up</button></li>
+		<li><button class="btn" data-modal="signIn">Sign in</button></li>
+		<li><button class="btn" onclick="Meteor.logout()">Sign out</button></li>
+	</ul>
+</template>

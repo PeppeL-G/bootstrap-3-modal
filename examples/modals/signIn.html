@@ -1,0 +1,56 @@
+<template name="modal_signIn">
+	<div class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">Sign in</h4>
+				</div>
+				
+				<div class="modal-body">
+					
+					<p>Use the form below to sign in.</p>
+					
+					<form role="form" class="form-horizontal">
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="modal_signIn_username">Username</label>
+							<div class="col-sm-9">
+								<input type="input" class="form-control" id="modal_signIn_username" placeholder="Enter username">
+								{{#with usernameError}}
+									<span class="help-block">{{this}}</span>
+								{{/with}}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="modal_signIn_password">Password</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="modal_signIn_password" placeholder="Enter password">
+								{{#with passwordError}}
+									<span class="help-block">{{this}}</span>
+								{{/with}}
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<input type="submit" class="btn btn-success" value="Sign in">
+							</div>
+					  </div>
+						
+					</form>
+					
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</template>
