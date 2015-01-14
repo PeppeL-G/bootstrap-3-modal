@@ -65,8 +65,8 @@ Meteor.startup(function(){
 
 If a second argument is passed to `Meteor.show`
 (`Meteor.show(<templateName>, <dataContext>)`), it will be used as the data
-context for the template (works as the `dataContext` parameter for
-[UI.dynamic](http://docs.meteor.com/#ui_dynamic)).
+context for the template (works as the `data` parameter for
+[Template.dynamic](http://docs.meteor.com/#/full/template_dynamic)).
 
 The modal can be removed by calling `Modal.hide()` (or by using the other ways
 to remove modals in bootstrap).
