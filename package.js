@@ -1,13 +1,13 @@
 Package.describe({
 	summary: "Simple usage of bootstrap 3 modals.",
-	version: "1.0.0",
+	version: "1.0.1",
 	name: "peppelg:bootstrap-3-modal",
 	git: "https://github.com/PeppeL-G/bootstrap-3-modal.git"
 })
 
 Package.onUse(function(api){
 	
-	api.versionsFrom('METEOR@0.9.1.1')
+	api.versionsFrom('METEOR@1.0.2')
 	
 	api.use([
 		'templating',
