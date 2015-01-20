@@ -38,7 +38,7 @@ Template[templateName].rendered = function(){
 	
 	var template = this
 	
-	$modal = $('.modal')
+	$modal = template.$('.modal')
 	
 	$modal.modal()
 	
