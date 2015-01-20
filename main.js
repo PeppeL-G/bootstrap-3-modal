@@ -36,9 +36,15 @@ var templateName = 'peppelg_modal'
 
 Template[templateName].rendered = function(){
 	
+	var template = this
+	
 	$modal = $('.modal')
 	
 	$modal.modal()
+	
+	$modal.on('shown.bs.modal', function(event){
+		template.$('[autofocus]').focus()
+	})
 	
 	$modal.on('hidden.bs.modal', function(event){
 		Blaze.remove(view)
