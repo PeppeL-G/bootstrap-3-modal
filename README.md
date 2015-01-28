@@ -66,10 +66,38 @@ Meteor.startup(function(){
 If a second argument is passed to `Meteor.show`
 (`Meteor.show(<templateName>, <dataContext>)`), it will be used as the data
 context for the template (works as the `data` parameter for
-[Template.dynamic](http://docs.meteor.com/#/full/template_dynamic)).
+[Blaze.renderWithData](http://docs.meteor.com/#/full/blaze_renderwithdata)).
 
 The modal can be removed by calling `Modal.hide()` (or by using the other ways
 to remove modals in bootstrap).
+
+Using multiple modals
+---------------------
+As written in [the documentation for Bootstrap](http://getbootstrap.com/javascript/#modals),
+Bootstrap does not support showing multiple modals at a time:
+
+> Overlapping modals not supported
+> Be sure not to open a modal while another is still visible. Showing more than one modal at a time requires custom code.
+
+This package does not contain any "custom code" for showing multiple modals at
+a time, but it is not limited to only inserting one modal at a time. To enable
+insertions of multiple modals, just set `Modal.allowMultiple` to `true`:
+
+```javascript
+Modal.allowMultiple = true
+
+Meteor.startup(function(){
+	
+	// Show the example modal directly on startup...
+	Modal.show('exampleModal')
+	
+	// ...and also 3 seconds later, even if the first one hasn't been closed.
+	setTimeout(function(){
+		Modal.show('exampleModal')
+	}, 3000)
+	
+})
+```
 
 Examples
 --------

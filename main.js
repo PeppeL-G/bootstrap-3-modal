@@ -1,55 +1,51 @@
-var view = null
-var $modal = null
+var $soloModal = null // Used when allowMultiple = false.
 
 // The public API.
 Modal = {
 	
+	allowMultiple: false,
+	
 	show: function(templateName, data){
 		
-		// Only show the modal if no modal is shown at the moment.
-		// See issue #2.
-		if($modal == null){
+		if($soloModal == null || this.allowMultiple){
 			
-			var template = Template.peppelg_modal
-			var data = {
-				templateName: templateName,
-				data: data
-			}
 			var parentNode = document.body
 			
-			view = Blaze.renderWithData(template, data, parentNode)
+			var view = Blaze.renderWithData(Template[templateName], data, parentNode)
+			
+			var domRange = view._domrange // TODO: Don't violate against the public API.
+			
+			var $modal = domRange.$('.modal')
+			
+			$modal.on('shown.bs.modal', function(event){
+				$modal.find('[autofocus]').focus()
+			})
+			
+			$modal.on('hidden.bs.modal', function(event){
+				Blaze.remove(view)
+				$soloModal = null
+			})
+			
+			$soloModal = $modal
+			
+			$modal.modal()
 			
 		}
 		
 	},
 	
-	hide: function(){
-		$modal.modal('hide')
+	hide: function(/* optional */ template){
+		
+		if(template instanceof Blaze.TemplateInstance){
+			
+			template.$('.modal').modal('hide')
+			
+		}else if($soloModal != null){
+			
+			$soloModal.modal('hide')
+			
+		}
+		
 	}
-	
-}
-
-
-
-// The modal template.
-var templateName = 'peppelg_modal'
-
-Template[templateName].rendered = function(){
-	
-	var template = this
-	
-	$modal = template.$('.modal')
-	
-	$modal.modal()
-	
-	$modal.on('shown.bs.modal', function(event){
-		template.$('[autofocus]').focus()
-	})
-	
-	$modal.on('hidden.bs.modal', function(event){
-		Blaze.remove(view)
-		$modal = null
-		view = null
-	})
 	
 }
