@@ -77,6 +77,7 @@ As written in [the documentation for Bootstrap](http://getbootstrap.com/javascri
 Bootstrap does not support showing multiple modals at a time:
 
 > Overlapping modals not supported
+
 > Be sure not to open a modal while another is still visible. Showing more than one modal at a time requires custom code.
 
 This package does not contain any "custom code" for showing multiple modals at
@@ -98,6 +99,10 @@ Meteor.startup(function(){
 	
 })
 ```
+
+To remove a modal, you need to pass the modal's template instance as
+the first argument to `Modal.hide`. Usually, this is done in an event handler,
+where the template instance is provided as the second argument.
 
 Examples
 --------
