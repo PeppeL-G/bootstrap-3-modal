@@ -4,13 +4,13 @@ A Meteor package making it easy to use bootstrap 3 modals in Meteor.
 
 **Note 1:** In order for this package to work, you must include bootstrap 3 in
 your meteor project. You can add bootstrap 3 to your project by adding the
-package `mizzao:bootstrap-3`:
+package `twbs:bootstrap`:
 
 ```
-meteor add mizzao:bootstrap-3
+meteor add twbs:bootstrap
 ```
 
-This package does not include `mizzao:bootstrap-3` automatically (in case you
+This package does not include `twbs:bootstrap` automatically (in case you
 have included bootstrap 3 in another way).
 
 Include this package with:
