@@ -63,8 +63,8 @@ Meteor.startup(function(){
 })
 ```
 
-If a second argument is passed to `Meteor.show`
-(`Meteor.show(<templateName>, <dataContext>)`), it will be used as the data
+If a second argument is passed to `Modal.show`
+(`Modal.show(<templateName>, <dataContext>)`), it will be used as the data
 context for the template (works as the `data` parameter for
 [Blaze.renderWithData](http://docs.meteor.com/#/full/blaze_renderwithdata)).
 
