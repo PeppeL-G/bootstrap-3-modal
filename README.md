@@ -108,5 +108,5 @@ Examples
 --------
 At the moment there is one sign up modal and one sign in modal in the directory
 `examples`. When a proper way to do this in Meteor (settings min password
-length, and things like that) existst in Meteor, I will probably create a
+length, and things like that) exists in Meteor, I will probably create a
 package like accounts-ui, but with modals instead.
