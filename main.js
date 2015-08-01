@@ -26,10 +26,10 @@ Modal = {
 				$soloModal = null
 			})
 
-      if (options && options.events) {
-        Object.keys(options.events).forEach(function(eventName) {
-          $modal.on(eventName, options.events[eventName]);
-        });
+      if (options && options.events){
+        Object.keys(options.events).forEach(function(eventName){
+          $modal.on(eventName, options.events[eventName])
+        })
       }
 
 			$soloModal = $modal
@@ -39,6 +39,11 @@ Modal = {
 		}
 
 	},
+
+  // force $soloModal to be null
+  clear: function(){
+    $soloModal = null
+  },
 
 	hide: function(/* optional */ template){
 
