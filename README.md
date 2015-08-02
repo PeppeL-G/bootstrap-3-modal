@@ -71,6 +71,10 @@ context for the template (works as the `data` parameter for
 The modal can be removed by calling `Modal.hide()` (or by using the other ways
 to remove modals in bootstrap).
 
+You can also pass [Bootstrap modal options](http://getbootstrap.com/javascript/#modals-options)
+to `Modal.show` as a third argument.  Otherwise, you can define the
+options in the template via data attributes.
+
 Using multiple modals
 ---------------------
 As written in [the documentation for Bootstrap](http://getbootstrap.com/javascript/#modals),
