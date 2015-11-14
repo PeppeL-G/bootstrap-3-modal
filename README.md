@@ -68,6 +68,18 @@ If a second argument is passed to `Modal.show`
 context for the template (works as the `data` parameter for
 [Blaze.renderWithData](http://docs.meteor.com/#/full/blaze_renderwithdata)).
 
+A third argument can be passed to `Modal.show`
+(`Modal.show(<templateName>, <dataContext>, <modalOptions>)`). It will be used as the `options`
+(only) parameter to the modal() call. For example, if you want to disable closing the modal
+dialog when the user clicks outside of it, you'd pass
+
+```javascript
+{
+	backdrop: 'static'
+	keyboard: false
+}
+```
+
 The modal can be removed by calling `Modal.hide()` (or by using the other ways
 to remove modals in bootstrap).
 
