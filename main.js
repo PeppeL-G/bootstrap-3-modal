@@ -5,7 +5,7 @@ Modal = {
 	
 	allowMultiple: false,
 	
-	show: function(templateName, data){
+	show: function(templateName, data, options){
 		
 		if($soloModal == null || this.allowMultiple){
 			
@@ -28,7 +28,7 @@ Modal = {
 			
 			$soloModal = $modal
 			
-			$modal.modal()
+			$modal.modal(options ? options : {})
 			
 		}
 		
