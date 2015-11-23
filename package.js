@@ -1,6 +1,6 @@
 Package.describe({
 	summary: "Simple usage of bootstrap 3 modals.",
-	version: "1.0.3",
+	version: "1.0.4",
 	name: "peppelg:bootstrap-3-modal",
 	git: "https://github.com/PeppeL-G/bootstrap-3-modal.git"
 })
