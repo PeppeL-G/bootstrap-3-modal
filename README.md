@@ -68,6 +68,14 @@ If a second argument is passed to `Modal.show`
 context for the template (works as the `data` parameter for
 [Blaze.renderWithData](http://docs.meteor.com/#/full/blaze_renderwithdata)).
 
+Please note that in order to render your data reactively, `<dataContext>` must be a function that returns reactive object:
+```javascript
+	Modal.show('exampleModal', function () {
+		return MyCollection.findOne(itemId);
+	});
+})
+```
+
 A third argument can be passed to `Modal.show`
 (`Modal.show(<templateName>, <dataContext>, <modalOptions>)`). It will be used as the `options`
 (only) parameter to the modal() call. For example, if you want to disable closing the modal
