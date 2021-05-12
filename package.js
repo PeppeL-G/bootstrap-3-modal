@@ -6,18 +6,19 @@ Package.describe({
 })
 
 Package.onUse(function(api){
-	
+
 	api.versionsFrom('METEOR@1.0.3')
-	
+
 	api.use([
 		'templating',
-		'jquery'
 	], 'client')
-	
+
+	api.use('jquery', 'client', { weak: true });
+
 	api.addFiles([
 		'main.js'
 	], 'client')
-	
+
 	api.export('Modal', 'client')
-	
+
 })
