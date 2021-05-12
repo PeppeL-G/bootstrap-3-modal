@@ -2,6 +2,8 @@ bootstrap-3-modal
 =================
 A Meteor package making it easy to use bootstrap 3 modals in Meteor.
 
+Installation
+-----
 **Note 1:** In order for this package to work, you must include bootstrap 3 in
 your meteor project. You can add bootstrap 3 to your project by adding the
 package `twbs:bootstrap`:
@@ -12,6 +14,13 @@ meteor add twbs:bootstrap
 
 This package does not include `twbs:bootstrap` automatically (in case you
 have included bootstrap 3 in another way).
+
+**Note 2:**
+This package has a weak dependency on jQuery (similar as Blaze),
+so you can add jQuery to your Meteor app `<head>` from a [CDN](https://code.jquery.com/) or a [Meteor package](https://atmospherejs.com/meteor/jquery):
+```
+meteor add jquery
+```
 
 Include this package with:
 
